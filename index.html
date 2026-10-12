@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#2a1608">
+<title>Big Beer 啤酒節大合杯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="game" aria-label="Big Beer 遊戲畫面"></canvas>
+
+<div id="hud-buttons" class="hidden">
+  <button id="btn-pause" class="icon-btn" title="暫停 (P)" aria-label="暫停">❚❚</button>
+  <button id="btn-music" class="icon-btn" title="音樂開關 (M)" aria-label="音樂開關">♫</button>
+  <button id="btn-sfx" class="icon-btn" title="音效開關 (N)" aria-label="音效開關">🔊</button>
+</div>
+
+<section id="screen-loading" class="screen">
+  <div class="card">
+    <div class="loading-title">Big Beer</div>
+    <div class="bar"><div id="load-fill"></div></div>
+    <div id="load-text">正在搬啤酒桶進帳篷…</div>
+    <button id="btn-enter" class="beer-btn hidden">點擊進入啤酒節</button>
+  </div>
+</section>
+
+<section id="screen-title" class="screen hidden">
+  <div class="card title-card">
+    <img id="title-logo" src="assets/img/logo.webp" alt="Big Beer Oktoberfest">
+    <p class="subtitle">啤酒節大合杯</p>
+    <ul class="howto">
+      <li><b>瞄準</b>：滑鼠左右移動（或 ← → / A D）</li>
+      <li><b>推杯</b>：按住蓄力、放開就把酒杯往桌子另一頭推過去（或按住空白鍵）</li>
+      <li><b>合成</b>：兩個一樣的杯子撞在一起，會變成更大的杯子！</li>
+      <li><b>小心</b>：杯子堆過紅線 2.5 秒，桌子就滿了，遊戲結束</li>
+      <li><b>快點</b>：服務生很沒耐心，倒數結束她會自己把杯子推出去！</li>
+      <li><b>帳篷事件</b>：全場搖擺、拍桌乾杯、請喝一輪烈酒、免費啤酒雙倍分數，隨時會發生！</li>
+    </ul>
+    <button id="btn-start" class="beer-btn">開始暢飲 Prost!</button>
+    <div class="best-line">最高分 <span id="title-best">0</span></div>
+  </div>
+</section>
+
+<section id="screen-pause" class="screen hidden">
+  <div class="card">
+    <h2>中場休息</h2>
+    <p>喝口水再繼續～</p>
+    <button id="btn-resume" class="beer-btn">繼續 Weiter!</button>
+    <button id="btn-quit" class="wood-btn">回到標題</button>
+  </div>
+</section>
+
+<section id="screen-over" class="screen hidden">
+  <div class="card">
+    <h2>桌子滿啦！</h2>
+    <div class="final-score"><span id="over-score">0</span><small>分</small></div>
+    <div class="best-line" id="over-best">最高分 0</div>
+    <div class="over-max">最大杯：<span id="over-max">-</span></div>
+    <button id="btn-retry" class="beer-btn">再來一輪 Noch a Maß!</button>
+    <button id="btn-home" class="wood-btn">回到標題</button>
+  </div>
+</section>
+
+<script src="js/sprites-meta.js"></script>
+<script src="js/config.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/music.js"></script>
+<script src="js/physics.js"></script>
+<script src="js/render.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

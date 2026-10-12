@@ -1,0 +1,5 @@
+# Raw Higgsfield generations (~100 MB); tools/build_assets.py turns them into assets/img
+assets/raw/
+__pycache__/
+.DS_Store
+Thumbs.db
